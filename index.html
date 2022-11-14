@@ -7,17 +7,121 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
     <link ref="stylesheet" href="style.css" />
-    <style>
-        h1 {
-            text-align: center;
-            color: pink;
-        }
-    </style>
-</head>
+    <!DOCTYPE html>
+    <html>
+
+    <head>
+        <title>Parcel Sandbox</title>
+        <meta charset="UTF-8" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>FinalProject2</title>
+        <link rel="preconnect" href="https://fonts.googleapis.com" />
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+        <link href="https://fonts.googleapis.com/css2?family=Pacifico&display=swap" <link
+            href="https://fonts.googleapis.com/css2?family=Pacifico&display=swap" rel="stylesheet" />
+        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+            integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T"
+            crossorigin="anonymous" />
+        <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+        <style>
+            body {
+                font-family: "Pacifico", cursive;
+                background-image: url(https://images.rawpixel.com/image_800/czNmcy1wcml2YXRlL3Jhd3BpeGVsX2ltYWdlcy93ZWJzaXRlX2NvbnRlbnQvbHIvdjkzNS1hdW0tMTQtYS1jLTAxLmpwZw.jpg);
+            }
+
+            h1 {
+                text-align: center;
+                font-family: "Pacifico", cursive;
+                font-size: 72px;
+                color: rgb(10, 148, 173);
+            }
+
+            h2 {
+                text-align: center;
+                font-family: "Pacifico", cursive;
+                font-size: 52px;
+            }
+
+            input[type="text"] {
+                padding: 6px;
+                margin-top: 8px;
+                font-size: 17px;
+                border-color: rgb(10, 148, 173);
+                font-family: "Pacifico";
+            }
+
+            .searchbox button {
+                padding: 8px;
+                margin-top: 10px;
+                margin-left: 10px;
+                font-size: 20px;
+                border: none;
+                cursor: pointer;
+            }
+
+            .searchbox button:hover {
+                background: blue;
+            }
+
+            .row {
+                font-size: 30px;
+            }
+        </style>
+    </head>
 
 <body>
-    <h1> Hello Git</h1>
-    <script src="script.js"></script>
+    <h1>Weather</h1>
+    <div class="container">
+        <div class="weather-app">
+            <form class="search-form" id="search-form">
+                <div class="row">
+                    <div class="col-9">
+                        <input type="search" placeholder="Type a city.." autofocus="on" autocomplete="off"
+                            id="city-input" class="form-control shadow-sm" />
+                    </div>
+                    <div class="col-3">
+                        <input type="submit" value="Search" class="form-control btn btn-primary shadow-sm w-100" />
+                    </div>
+                    <div class="col-3">
+                        <button class="btn btn-success w-100" id="current-location-button">
+                            Current
+                        </button>
+                    </div>
+                </div>
+            </form>
+            <h1 id="city">
+                Nashville, Tn
+            </h1>
+            <ul>
+                <li id="date"></li>
+                <li id="description"></li>
+                <li>
+                    Partly Cloudy
+                </li>
+            </ul>
+            <div class="row">
+                <div class="col-6">
+                    <div class="clearfix">
+                        <img src="https://ssl.gstatic.com/onebox/weather/64/partly_cloudy.png" alt="Cloudy icon"
+                            class="weather-icon float-left" />
+                        <div class="float-left">
+                            <span class="temperature" id="temperature">19</span><span class="units">
+                                <a href="#" id="celsius-link">°C</a> |
+                                <a href="#" id="fahrenheit-link">°F</a>
+                            </span>
+                        </div>
+                    </div>
+                </div>
+                <br />
+                <div class="row">
+                    <div class="col-6">Current Condition- Sunny</div>
+                    <div class="col-6">Humidity- 15%</div>
+                    <div class="col-6">Wind- 14mph</div>
+                    <div class="col-6">Precipitation- 0%</div>
+                </div>
+                <script src="src/index.js">
+                </script>
 </body>
 
 </html>
