@@ -74,10 +74,9 @@
     </head>
 
 <body>
-    <h1>Weather</h1>
     <div class="container">
         <div class="weather-app">
-            <form class="search-form" id="search-form">
+            <form id="search-form" class="search-form">
                 <div class="row">
                     <div class="col-9">
                         <input type="search" placeholder="Type a city.." autofocus="on" autocomplete="off"
@@ -88,41 +87,39 @@
                     </div>
                 </div>
             </form>
-            <h2 id="city">
-                Nashville, Tn
-            </h2>
+            <h1 id="city">
+            </h1>
             <ul>
-                <li id="date"></li>
+                <li> Last Updated<span id="date"></span></li>
                 <li id="description"></li>
-                <li>
-                    Partly Cloudy
                 </li>
             </ul>
-            <div class="row">
-                <div class="col-6">
-                    <div class="clearfix">
-                        <img src="https://ssl.gstatic.com/onebox/weather/64/partly_cloudy.png" alt="Cloudy icon"
-                            class="weather-icon float-left" />
-                        <div class="float-left">
-                            <span class="temperature" id="temperature">19</span><span class="units">
-                                <a href="#" id="celsius-link">°C</a> |
-                                <a href="#" id="fahrenheit-link">°F</a>
-                            </span>
-                        </div>
+        </div>
+        <div class="row">
+            <div class="col-6">
+                <div class="clearfix">
+                    <img src="https://ssl.gstatic.com/onebox/weather/64/partly_cloudy.png" alt="Cloudy icon"
+                        class="weather-icon float-left" />
+                    <div class="float-left">
+                        <span class="temperature" id="temperature">19</span><span class="units">
+                            <a href="#" id="celsius-link">°C</a> |
+                            <a href="#" id="fahrenheit-link">°F</a>
+                        </span>
                     </div>
                 </div>
-                <br />
-                <div class="row">
-                    <div class="col-6">Current Condition- Sunny</div>
-                    <div class="col-6">Humidity- 15%</div>
-                    <div class="col-6">Wind- 14mph</div>
-                    <div class="col-6">Precipitation- 0%</div>
-                </div>
-                <div class="Github">
-                    <a href="https://github.com/33holland/Weather-App" alt="Github "> Github link</a>
-                </div>
-                <script src="src/index.js">
-                </script>
+            </div>
+            <br />
+            <div class="row">
+
+                <div class="col-6">Humidity: <span id="humidity"></span>%</div>
+                <div class="col-6">Wind: <span id="wind"></span> Mph</div>
+
+            </div>
+            <div class="Github">
+                <a href="https://github.com/33holland/Weather-App" alt="Github "> Github link</a>
+            </div>
+            <script src="src/index.js">
+            </script>
 </body>
 
 </html>
