@@ -41,6 +41,12 @@ function formatDate(date) {
   let h2 = document.querySelector("h2");
   return `${day} ${hours}:${minutes}`;
 }
+function search(event) {
+  event.preventDefault();
+  let searchform = document.querySelector("searchform");
+  let h3 = document.querySelector("h3");
+  h3.innerHTML = " Searching for ${cityinput.value}...";
+}
 
 function displayWeatherCondition(response) {
   document.querySelector("#city").innerHTML = response.data.name;
