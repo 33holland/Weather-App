@@ -39,7 +39,7 @@ function formatDate(date) {
   ];
   let month = months[now.getMonth()];
   let h2 = document.querySelector("h2");
-  return `${day} ${hours}:${minutes}`;
+  h2.innerHTML = `${day}, ${month}, ${hours}, ${minutes}, ${year}`;
 }
 function search(event) {
   event.preventDefault();
@@ -85,7 +85,6 @@ function getCurrentLocation(event) {
 let dateElement = document.querySelector("#date");
 let currentTime = new Date();
 dateElement.innerHTML = formatDate(currentTime);
-h2.innerHTML = `${day} ${month} ${date}, ${hours}:${minutes}, ${year}`;
 
 let searchForm = document.querySelector("#search-form");
 searchForm.addEventListener("submit", handleSubmit);
