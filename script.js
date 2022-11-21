@@ -1,5 +1,11 @@
 function formatDate(date) {
-  let hours = date.getHours();
+  let now = new Date();
+
+  let h2 = document.querySelector("h2");
+
+  let date = now.getDate();
+  let hours = now.getHours();
+  let year = now.getFullYear();
   if (hours < 10) {
     hours = `0${hours}`;
   }
@@ -19,8 +25,24 @@ function formatDate(date) {
     "Saturday",
   ];
   let day = days[dayIndex];
+  let months = [
+    "Jan",
+    "Feb",
+    "March",
+    "Apr",
+    "May",
+    "Jun",
+    "Jul",
+    "Aug",
+    "Sep",
+    "Oct",
+    "Nov",
+    "Dec",
+  ];
+  let month = months[now.getMonth()];
 
   return `${day} ${hours}:${minutes}`;
+  h2.innerHTML = `${day} ${month} ${date}, ${hours}:${minutes}, ${year}`;
 }
 
 function displayWeatherCondition(response) {
