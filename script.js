@@ -1,8 +1,6 @@
 function formatDate(date) {
   let now = new Date();
 
-  let h2 = document.querySelector("h2");
-
   let date = now.getDate();
   let hours = now.getHours();
   let year = now.getFullYear();
@@ -40,9 +38,8 @@ function formatDate(date) {
     "Dec",
   ];
   let month = months[now.getMonth()];
-
+  let h2 = document.querySelector("h2");
   return `${day} ${hours}:${minutes}`;
-  h2.innerHTML = `${day} ${month} ${date}, ${hours}:${minutes}, ${year}`;
 }
 
 function displayWeatherCondition(response) {
@@ -82,6 +79,7 @@ function getCurrentLocation(event) {
 let dateElement = document.querySelector("#date");
 let currentTime = new Date();
 dateElement.innerHTML = formatDate(currentTime);
+h2.innerHTML = `${day} ${month} ${date}, ${hours}:${minutes}, ${year}`;
 
 let searchForm = document.querySelector("#search-form");
 searchForm.addEventListener("submit", handleSubmit);
