@@ -74,6 +74,7 @@
     </head>
 
 <body>
+    <header> Weather</header>
     <div class="container">
         <div class="weather-app">
             <form id="search-form" class="search-form">
@@ -90,7 +91,7 @@
             <h1 id="city">
             </h1>
             <ul>
-                <li> Last Updated<span id="date"></span></li>
+                <li> Last Updated <span id="date"></span></li>
                 <li id="description"></li>
                 </li>
             </ul>
@@ -116,7 +117,8 @@
             <div class="Github">
                 <a href="https://github.com/33holland/Weather-App" alt="Github "> Github link</a>
             </div>
-            <script>function formatDate(timestamp) {
+            <script>
+                function formatDate(timestamp) {
                     let date = new Date(timestamp);
                     let hours = date.getHours();
 
@@ -229,7 +231,7 @@
                 let celsiusLink = document.querySelector("#celsius-link");
                 celsiusLink.addEventListener("click", convertToCelsius);
 
-                search("New York"); </script>
+            </script>
 </body>
 
 </html>
