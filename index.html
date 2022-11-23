@@ -200,6 +200,7 @@
                 let iconElement = document.querySelector("#icon");
 
                 fahrenheitTemperature = reponse.data.main.temp;
+
                 temperatureElement.innerHTML = Math.round(fahrenheitTemperature);
                 cityElement.innerHTML = response.data.name;
                 descriptionElement.innerHTML = response.data.weather[0].description;
@@ -235,7 +236,7 @@
                 event.preventDefault();
                 navigator.geolocation.getCurrentPosition(searchLocation);
             }
-            function displayTemperature(event) {
+            function displayFarenheitTemperature(event) {
                 event.preventDefault();
                 let temperatureElement = document.querySelector("#temperature");
                 celsiusLink.classList.remove("active");
@@ -273,7 +274,7 @@
             searchForm.addEventListener("submit", handleSubmit);
 
             let currentLocationButton = document.querySelector("#current-location-button");
-            currentLocationButton.addEventListener("click", getCurrentLocation);
+            currentLocationButton.addEventListener("click", getCurrentPosition);
 
             let fahrenheitLink = document.querySelector("#fahrenheit-link");
             fahrenheitLink.addEventListener("click", convertToFahrenheit);
