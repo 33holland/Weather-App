@@ -142,7 +142,7 @@
                             <img src="https://ssl.gstatic.com/onebox/weather/64/partly_cloudy.png" alt="Clear"
                                 id="icon" />
                             <div class="float-left">
-                                <strong id="temperature"></strong></strong><span class="units"> °F</span>
+                                <strong id="temperature"></strong></strong><span id="units"> °C</span>
                             </div>
                         </div>
                     </div>
@@ -190,23 +190,22 @@
                 let days = ["Sun", "Mon", "Tue", "Wed", "Thu", "Fri", "Sat"];
                 return days[day];
             }
-            function displayTemperature(response) {
-                let temperatureElement = document.querySelector("#temperature");
-                let cityElement = document.querySelector("#city");
+
+            function displayWeatherCondition(response) {
+                document.querySelector("#city").innerHTML = response.data.name;
+                document.querySelector("#temperature").innerHTML = Math.round(
+                    response.data.main.temp);
+
                 let descriptionElement = document.querySelector("#description");
                 let humidityElement = document.querySelector("#humidity");
                 let windElement = document.querySelector("#wind");
-                let dateElement = document.querySelector("#date");
                 let iconElement = document.querySelector("#icon");
+                let cityElement = document.querySelector("#city");
 
-                fahrenheitTemperature = reponse.data.main.temp;
-
-                temperatureElement.innerHTML = Math.round(fahrenheitTemperature);
                 cityElement.innerHTML = response.data.name;
                 descriptionElement.innerHTML = response.data.weather[0].description;
                 humidityElement.innerHTML = response.data.main.humidity;
                 windElement.innerHTML = Math.round(response.data.wind.speed);
-                dateElement.innerHTML = formatDate(response.data.dt * 1000);
                 iconElement.setAttribute(
                     "src",
                     `http://openweathermap.org/img/wn/${response.data.weather[0].icon}@2x.png`
@@ -215,9 +214,9 @@
             }
 
             function searchCity(city) {
-                let apiKey = "675dbfbb7228cab28c105aea10434395";
+                let apiKey = "fda3688b1db05987dd5d07c237aecfba";
                 let apiUrl = `https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=${apiKey}&units=metric`;
-                axios.get(apiUrl).then(displayTemperature);
+                axios.get(apiUrl).then(displayWeatherCondition);
             }
 
             function handleSubmit(event) {
@@ -227,59 +226,17 @@
             }
 
             function searchLocation(position) {
-                let apiKey = "675dbfbb7228cab28c105aea10434395";
+                let apiKey = "fda3688b1db05987dd5d07c237aecfba";
                 let apiUrl = `https://api.openweathermap.org/data/2.5/weather?lat=${position.coords.latitude}&lon=${position.coords.longitude}&appid=${apiKey}&units=metric`;
-                axios.get(apiUrl).then(displayTemperature);
+                axios.get(apiUrl).then(displayWeatherCondition);
             }
 
-            function getCurrentLocation(event) {
-                event.preventDefault();
-                navigator.geolocation.getCurrentPosition(searchLocation);
-            }
-            function displayFarenheitTemperature(event) {
-                event.preventDefault();
-                let temperatureElement = document.querySelector("#temperature");
-                celsiusLink.classList.remove("active");
-                fahrenheitLink.classList.add("active");
-                let fahrenheitTemperature = (celsiusTemperature * 9) / 5 + 32;
-                temperatureElement.innerHTML = Math.round(fahrenheitTemperature);
-            }
-
-            function displayCelsiusTemperature(event) {
-                event.preventDefault();
-                celsiusLink.classList.add("active");
-                fahrenheitLink.classList.remove("active");
-                let temperatureElement = document.querySelector("#temperature");
-                temperatureElement.innerHTML = Math.round(celsiusTemperature);
-            }
-
-            function convertToFahrenheit(event) {
-                event.preventDefault();
-                let temperatureElement = document.querySelector("#temperature");
-                temperatureElement.innerHTML = 66;
-            }
-
-            function convertToCelsius(event) {
-                event.preventDefault();
-                let temperatureElement = document.querySelector("#temperature");
-                temperatureElement.innerHTML = 19;
-            }
-
-            let celsiusTemperature = null;
             let dateElement = document.querySelector("#date");
             let currentTime = new Date();
             dateElement.innerHTML = formatDate(currentTime);
 
             let searchForm = document.querySelector("#search-form");
             searchForm.addEventListener("submit", handleSubmit);
-
-
-
-            let fahrenheitLink = document.querySelector("#fahrenheit-link");
-            fahrenheitLink.addEventListener("click", convertToFahrenheit);
-
-            let celsiusLink = document.querySelector("#celsius-link");
-            celsiusLink.addEventListener("click", convertToCelsius);
 
             search("New York"); </script>
 </body>
