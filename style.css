@@ -1,4 +1,139 @@
-h1 {
-    text-align: center;
-    color: pink;
-}
+ body {
+                font-family: "Lora", serif;
+                background-image: url(https://img.freepik.com/premium-vector/confetti-concept-design-holiday-happy-day-background-celebration_29865-1734.jpg?w=2000);
+                box-shadow: 0 30px 50px rgb(65 50 100 / 8%);
+                padding: 40px;
+            }
+
+            h1 {
+                text-align: center;
+                font-family: "Lora", serif;
+                font-size: 72px;
+                color: #BB78FF;
+            }
+
+            h2 {
+                text-align: center;
+                font-family: "Lora", serif;
+                font-size: 52px;
+            }
+
+            ul {
+                margin: 0;
+                padding: 0;
+
+            }
+
+            li {
+                list-style: none;
+                margin: 0;
+                padding: 0
+            }
+
+            li:first-letter {
+                text-transform: capitalize;
+            }
+
+            .weather-app-wrapper {
+                max-width: 600px;
+                margin: 30px auto;
+            }
+
+            .weather-app {
+                padding: 20px;
+                border: 1px solid #dadde1;
+                border-radius: 5px;
+            }
+
+            .weather-temperature strong {
+                color: rgb(33, 33, 33);
+                font-size: 64px;
+                line-height: 1;
+                font-weight: 400;
+            }
+
+            .weather-temperature .units {
+                position: relative;
+                font-size: 16px;
+                top: -34px;
+            }
+
+            input[type="text"] {
+                padding: 6px;
+                margin-top: 8px;
+                font-size: 17px;
+                border-color: rgb(10, 148, 173);
+                font-family: "Lora", serif;
+            }
+
+            .searchbox button {
+                padding: 8px;
+                margin-top: 10px;
+                margin-left: 10px;
+                font-size: 20px;
+                border: none;
+                cursor: pointer;
+            }
+
+            .Github {
+                text-align: center;
+            }
+
+            .searchbox button:hover {
+                background: blue;
+            }
+
+            .row {
+                font-size: 30px;
+            }
+
+            .overview {
+                margin-bottom: 20px;
+                text-transform: capitalize;
+            }
+
+            .weather-temperature strong {
+                color: #BB78FF;
+                font-size: 64px;
+                line-height: 1;
+                font-weight: 400;
+                text-align: center;
+            }
+
+            .weather-temperature .units {
+                position: relative;
+                font-size: 16px;
+                top: -34px;
+            }
+
+            .weather-temperature .active {
+                color: #BB78FF;
+            }
+
+            .weather-forecast {
+                margin-top: 20px;
+                text-align: center;
+                color: #BB78FF;
+            }
+
+            .weather-forecast-date {
+                font-size: 16px;
+                opacity: 0.5;
+            }
+
+            .weather-forecast-temperature-min {
+                opacity: 0.5;
+            }
+
+            .weather-forecast-temperatures {
+                font-size: 20px;
+            }
+
+            .CurrentLocation button {
+                background-color: blue;
+            }
+
+            .CurrentLocation button:hover {
+                background: white;
+                color: blue;
+            }
